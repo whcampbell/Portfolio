@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block header %}Sign Up{% endblock %}
+
+{% block content %}
+    <p>
+        Sign up to leave comments and start a discussion with Will!
+    </p>
+    <form method='post'>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type='submit' value='Sign Up'>
+    </form>
+{% endblock content %}
