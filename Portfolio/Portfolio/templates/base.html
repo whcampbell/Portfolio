@@ -1,11 +1,56 @@
+{% load static %}
 <!DOCTYPE html>
 
 <html lang='en'>
 <head>
     <title>{% block title %}Will Campbell{% endblock %}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@700&family=Montserrat:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{% static 'base_styles.css' %}">
 </head>
 
 <body>
+    <div class='navbar'>
+        <ul>
+            <li>
+                <a href="{% url 'home:welcome' %}">
+                    Home
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'journal:index' %}">
+                    Journal
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'projects:index' %}">
+                    Projects
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'home:about' %}">
+                    Learn More 
+                </a>
+            </li>
+            {% if not user.is_authenticated %}
+            <li>
+                <a href="{% url 'users:signup' %}">Sign Up</a>
+            </li>
+            <li>
+                <a href="{% url 'users:login' %}">Log In</a>
+            </li>
+            {% else %}
+            <li>
+                <a href="{% url 'users:logout' %}">
+                    Log {{ user.username }} out
+                </a>
+            </li>
+            {% endif %}
+    </div>
+
     <h1>{% block header %}Will Campbell{% endblock %}</h1>
 
     <div class='content'>
@@ -15,6 +60,14 @@
             </p>
         {% endblock content %}
     </div>
+
+    <footer>
+        <p>
+            This site was written by Will Campbell.
+            It uses the following tools: Python-Django, HTML, CSS, PythonAnywhere
+            Hosting and the Google Fonts API. 
+        </p>
+    </footer>
 
 </body>
 

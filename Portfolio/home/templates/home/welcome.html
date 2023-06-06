@@ -1,20 +1,26 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %} 
     {% if user.is_authenticated %}
         <h3>Hello {{ user.username }}</h3>
-        <p>
-            <a href="{% url 'users:logout' %}">Log Out</a>
-        </p>
     {% else %}
         <h3>Creative Web Developer</h3>
-        <p>
-            <a href="{% url 'users:signup' %}">Sign Up</a>
-        </p>
-        <p>
-            <a href="{% url 'users:login' %}">Log In</a>
-        </p>
     {% endif %}
-    <p>my name is will</p>
+    <p>
+        I am a versatile software developer based in the Twin Cities. 
+        I currently have a focus on backend web development, but I'm
+        constantly branching out and learning new things. Feel free
+        to contact me if you'd like to discuss opportunities or simply
+        have a chat. 
+    </p>
+    <p>Starting with the best way:</p>
+    <p>
+        Email: campbw2@gmail.com <br>
+        Phone: 414-852-3025 (I prefer text over call) <br>
+        Address: 2410 University Ave W, Ste 514 <br>
+        (If you want to send me a letter I guess)
+    </p>
+    <img class='frontimg' src="{% static 'home/images/Snowy_Course.jpeg' %}" alt="A snowy hill with a sunset">
 
 {% endblock content %}

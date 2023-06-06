@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}Snake!{% endblock %}
+
+{% block content %}
+    <p>
+        Use WASD to turn. Try to eat the apples without
+        hitting the wall or yourself. Be efficient: each
+        turn will take away from your score.
+    </p>
+
+    <canvas id='canvas' width='700px' height='420px'></canvas>
+    <button type='button' id='begin-button'>Begin</button>
+    <script src="{% static 'projects/snake.js' %}"></script>
+{% endblock %}

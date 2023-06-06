@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block header %}Will's Journal{% endblock %}
+
+{% block content %}
+    <p>
+        This is where Will writes about his troubles. 
+    </p>
+    <p>
+        Not really. Only sometimes. 
+    </p>
+    <p>
+        Here I share the things that I've been up to as well
+        as any demonstrations that I think would be helpful. These 
+        could be about a wide range of topics, including programming,
+        Django, and even making art. 
+    </p>
+    <p>
+        See the full list of entries <a href="dummy">here</a>
+    </p>
+    <div class='entry-block'>
+        <h3>
+            <a href="{% url 'journal:entry' pk=entry.pk %}">{{ entry.title }}</a>
+        </h3>
+        <p>{{ entry.post_time }}</p>
+        <p>{{ entry.body|truncatewords:10 }}</p>
+    </div>
+
+{% endblock content %}
