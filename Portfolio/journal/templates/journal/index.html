@@ -16,14 +16,14 @@
         Django, and even making art. 
     </p>
     <p>
-        See the full list of entries <a href="dummy">here</a>
+        See the full list of entries <a href="{% url 'journal:entry-list' %}">here</a>
     </p>
     <div class='entry-block'>
         <h3>
             <a href="{% url 'journal:entry' pk=entry.pk %}">{{ entry.title }}</a>
         </h3>
         <p>{{ entry.post_time }}</p>
-        <p>{{ entry.body|truncatewords:10 }}</p>
+        <p>{{ entry.body|truncatewords:50 }}</p>
     </div>
 
 {% endblock content %}

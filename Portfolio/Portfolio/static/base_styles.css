@@ -33,6 +33,10 @@ footer p {
     margin-right:auto;
 }
 
+textarea {
+    display:block;
+}
+
 .navbar {
     background-color:black;
     text-align:center;
@@ -71,4 +75,9 @@ footer p {
 
 .content p {
     margin-bottom:30px;
+}
+
+.step-links,
+.step-links a {
+    font-family: 'Montserrat', sans-serif;
 }

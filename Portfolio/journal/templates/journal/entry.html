@@ -3,12 +3,24 @@
 {% block header %}{{ entry.title }}{% endblock %}
 
 {% block content %}
-    <p>
+
     {{ entry.body|linebreaks }}
-    </p>
+
     <p>
         Posted on {{ entry.post_time }}
     </p>
+
+    {% if user.is_authenticated %}
+        <form method='post'>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type='submit' value='Submit Comment'>
+        </form>
+    {% else %}
+        <hr>
+        <h3>Comments</h3>
+        <p>Log in to leave a comment</p>
+    {% endif %}
 
     {% for comment in entry.comment_set.all %}
         <div class='comment'>
