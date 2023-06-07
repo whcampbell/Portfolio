@@ -37,6 +37,15 @@ textarea {
     display:block;
 }
 
+canvas {
+    background-color:black;
+    border:solid 10px orange;
+}
+
+form li {
+    font-family: 'Montserrat', sans-serif;
+}
+
 .navbar {
     background-color:black;
     text-align:center;
