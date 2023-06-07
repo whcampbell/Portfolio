@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block header %}Will's Projects{% endblock %}
 
@@ -10,7 +11,56 @@
         named 'portfolio.'
     </p>
     <p>
-        That said, I wanted to put a special spotlight on a few of 
-        my projects. Here they are:
+        That said, I wanted to put a special spotlight on the following
+        projects.
     </p>
+    <div class='project'>
+        <h3>
+            <a href="dummy-goto-youtube">
+                Impression 
+            </a>
+        </h3>
+        <img class='floating' src="{% static 'projects/images/Impression-Logo.png' %}" alt="Impression logo">
+        <p>
+            Impression is a social networking website for artists to share their work and 
+            find each other. It has a custom user model which allows visitors to cultivate
+            a list of friends and send messages back and forth. It also supports a blog
+            for each individual artist to talk about their process or new pieces. 
+        </p>
+        <p>
+            To find other artists, a visitor could make a specific search or just go to
+            the Gallery page. This page brings together a random sampling of the user base
+            and displays their chosen piece, similar to how other apps have a 'discover'
+            or 'explore' function. 
+        </p>
+        <p>
+            All in all, it was an educational project. Comparing to what Django has to offer,
+            it was pretty small scale. That being said, it was not meant to blow the world 
+            away. It was meant for me to get a solid handle on the basics, and I would say
+            that it worked pretty well. After writing Impression over the course of a month, 
+            I was able to blast through this website in just a few days.
+        </p>
+    </div>
+    
+    <div class='project'>
+        <h3>
+            <a href="{% url 'projects:snake' %}">Snake</a>
+        </h3>
+        <img src="{% static 'projects/images/snake.png' %}" alt="screengrab of snake game">
+        <p>
+            If you came all the way here, you might as well have some fun! On the other 
+            side of this link is a version of Snake that I wrote using Javascript. Not 
+            a lot of bells and whistles, just a nod to a classic. 
+        </p>
+        <p>
+            I've written a couple of minigames like this one using Javascript canvas,
+            which I was inspired to do after a class on computer graphics back in Madison. 
+            That class focused mostly on math, vectors, and the graphics pipeline, but
+            I found that I could make something fun with just the basics. 
+        </p>
+        <p>
+            I believe if you inspect the element, you can see the javascript file that
+            runs the game - it doesn't get bundled. That, or it's also on my github. 
+        </p>
+    </div>
 {% endblock content %}
